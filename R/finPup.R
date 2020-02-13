@@ -10,7 +10,7 @@ finPup <- function(type="popular",page=1)
   if (!(type %in% c('popular','latest'))){
     type='popular'
   }
-  pups <- httr::content(GET(paste0("https://pixabay.com/api/?key=",apikey,"&q=dog&image_type=photo&per_page=200&order=",type,"&page=",page)))
+  pups <- httr::content(httr::GET(paste0("https://pixabay.com/api/?key=",apikey,"&q=dog&image_type=photo&per_page=200&order=",type,"&page=",page)))
   pupselect <- round(runif(1,1,length(pups$hits)))
   puplocate <- pups$hits[[pupselect]]$largeImageURL
   puphouse <- paste0(tempdir(), "/doggo.png")
