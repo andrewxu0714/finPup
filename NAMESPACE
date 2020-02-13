@@ -1,5 +1,0 @@
-exportPattern("^[[:alpha:]]+")
-import(rvest)
-import(httr)
-import(jsonlite)
-import(imager)
